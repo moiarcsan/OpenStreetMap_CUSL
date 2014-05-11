@@ -5,7 +5,7 @@
 	<meta charset='utf-8' />
 	<meta http-equiv="X-UA-Compatible" content="chrome=1" />
 	<meta name="description" content="Ponencia preparada con motivo del VIII Concurso Universitario de Software Libre de la Universidad de Sevilla" />
-	<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+	<!--<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">-->
 	<meta name="author" content="Moisés Arcos Santiago">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -296,7 +296,191 @@
 					<section>
 						<h2>Colaborar</h2>
 						<h3>Renderizar</h3>
+						<ul>
+							<li>Osmarender</li>
+							<ul>
+								<li>Reglas XSLT para generar SVG que se convierten a PNG</li>
+								<li>era el render oficial, ahora ya retirado</li>
+							</ul>
+							<li>Mapnik</li>
+							<ul>
+								<li>Conecta con PostGis</li>
+								<li>Render principal de OSM</li>
+								<li>Genera teselas en varios estilos oficiales</li>
+							</ul>
+						</ul>
 					</section>
+					<section>
+						<h2>Colaborar</h2>
+						<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-6.086597442626953%2C37.34586967624396%2C-5.906181335449219%2C37.42756994897965&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/#map=13/37.3867/-5.9964">Ver mapa más grande</a></small>
+						<h3>Estándar</h3>
+					</section>
+					<section>
+						<h2>Colaborar</h2>
+						<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-6.086597442626953%2C37.34586967624396%2C-5.906181335449219%2C37.42756994897965&amp;layer=cyclemap" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/#map=13/37.3867/-5.9964&amp;layers=C">Ver mapa más grande</a></small>
+						<h3>Mapa ciclista</h3>
+					</section>
+					<section>
+						<h2>Colaborar</h2>
+						<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-6.086597442626953%2C37.34586967624396%2C-5.906181335449219%2C37.42756994897965&amp;layer=transportmap" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/#map=13/37.3867/-5.9964&amp;layers=T">Ver mapa más grande</a></small>
+						<h3>Mapa del transporte</h3>
+					</section>
+					<section>
+						<h2>Colaborar</h2>
+						<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-6.086597442626953%2C37.34586967624396%2C-5.906181335449219%2C37.42756994897965&amp;layer=mapquest" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/#map=13/37.3867/-5.9964&amp;layers=Q">Ver mapa más grande</a></small>
+						<h3>MapQuestOpen</h3>
+					</section>
+					<section>
+						<h2>Colaborar</h2>
+						<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-6.086597442626953%2C37.34586967624396%2C-5.906181335449219%2C37.42756994897965&amp;layer=hot" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/#map=13/37.3867/-5.9964&amp;layers=H">Ver mapa más grande</a></small>
+						<h3>Humanitario</h3>
+					</section>
+					<section>
+						<h2>Colaborar</h2>
+						<h3>Hazlo tu mismo</h3>
+						<ul>
+							<li>Puedes descargar toda la BD o sólo una parte</li>
+							<li>Renderizarlo y servirlo</li>
+							<li>Usando Mapnik</li>
+							<ul>
+								<li>Creamos el estilo con TileMill</li>
+								<li>Servimos los MBTiles con TileStream</li>
+							</ul>
+							<li>Te puedes montar tu propio render con TleDrawer</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Modelo de datos</h2>
+						<ul>
+							<li>Primitivas gráficas</li>
+							<ul>
+								<li>Nodos</li>
+								<li>Vías (Cerradas son áreas)</li>
+							</ul>
+							<li>Atributos Alfanuméricos</li>
+							<ul>
+								<li>Relaciones</li>
+								<li>Etiquetas</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Modelo de datos</h2>
+						<h3>Nodos</h3>
+					    	<ul class="discs smaller">
+					    		<li>Atributos importantes
+					        		<ul>
+					        			<li>identificador, latitud y longitud (EPSG:4326), usuario que creó el nodo, versión y <em>changeset</em></li>
+					        		</ul>
+					        	</li>
+					        	<li>Contenido
+					        		<ul>
+					        			<li>etiquetas</li>
+					        		</ul>
+					    		</li>
+					    	</ul>
+					    	<img src="./images/node.png">
+					</section>
+					<section>
+						<h2>Modelo de datos</h2>
+						<h3>Vias</h3>
+							<ul class="discs smaller">
+								<li>Atributos igual que los nodos</li>
+								<li>Contenido
+									<ul>
+										<li>Nodos de la vía y etiquetas</li>
+									</ul>
+								</li>
+							</ul>
+						<img src="./images/vias.png">
+					</section>
+					<section>
+						<h2>Modelo de datos</h2>
+						<h3>Relaciones</h3>
+						<ul class="discs smaller">
+							<li>Atributos
+								<ul>
+									<li>id, visible, usuario y timestamp</li>
+								</ul>
+							</li>
+							<li>Contenido
+								<ul>
+									<li>Miembros: id, tipo y rol en la relación</li>
+            						<li>Etiquetas</li>
+          						</ul>
+        					</li>
+      					</ul>
+      					<img src="./images/relacion.png">
+					</section>
+					<section>
+						<h2>Modelo de datos</h2>
+						<h3>Etiquetas</h3>
+						<ul class="discs smaller">
+							<li>Dan <strong>semántica</strong> a las primitivas gráficas<br> y relaciones</li>
+							<li>Definidas por la <strong>comunidad</strong> en <a href="http://wiki.openstreetmap.org/wiki/Map_Features" target="_blank" title="MapFeatures">el wiki</a></li>
+						</ul>
+      					<p class="center"><a class="noframe" href="http://wiki.openstreetmap.org/wiki/Map_Features" target="_blank" title="MapFeatures"><img class="figure" src="./images/etiquetas.png" width="500" alt="MapFeatures"></a></p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>API de OSM</h2>
+						<h3>Características</h3>
+						<ul>
+							<li>v0.6 desde 2009</li>
+							<li>RESTful</li>
+							<li>Consultas anónimas</li>
+							<li>Actualizaciones mediante OAuth</li>
+						</ul>
+					</section>
+					<section>
+						<h2>API de OSM</h2>
+						<h3>Actualizaciones de datos</h3>
+						<ul>
+							<li>PUT /api/0.6/changeset/create</li>
+							<li>PUT /api/0.6/changeset/#id/close</li>
+							<li>PUT /api/0.6/[N|W|R]/create</li>
+							<li>DELETE /api/0.6/[N|W|R]/#id</li>
+						</ul>
+					</section>
+					<section>
+						<h2>API de OSM</h2>
+						<h3>Otras consultas</h3>
+						<ul>
+							<li>GET /api/0.6/[N|W|R]/#id/relations</li>
+							<li>GET /api/0.6/node/#id/ways</li>
+							<li>GET /api/0.6/[W|R]/#id/full</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Integrar OSM en tu web</h2>
+						<img src="./images/compartir.png">
+						<h3>Mediante HTML</h3>
+					</section>
+					<section>
+						<h2>Integrar OSM en tu web</h2>
+						<img src="./images/leaflet.png">
+						<h3>Mediante Leaflet</h3>
+					</section>
+					<section>
+						<h2>Integrar OSM en tu web</h2>
+						<img src="./images/openlayers_map.png">
+						<img src="./images/openlayers_code.png">
+						<h3>Mediante OpenLayers</h3>
+					</section>
+				</section>
+				<section>
+					<h2>Agradecimientos</h2>
+					<h3>Gracias por vuestra atención</h3>
+				</section>
+				<section>
+					<h2>Licencia</h2>
+					<img src="http://www.webislam.com/libs/timthumb.php?src=/media/2013/03/56559_cc-by-sa_big.png&amp;w=300" style="width: 596.9540779159607px; height: 207.4198472772846px; max-height: none; max-width: none;"><br>
+					<span>CC-BY-SA</span>
 				</section>
 			</div>
 		</div>
